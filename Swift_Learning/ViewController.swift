@@ -6,12 +6,17 @@
 //
 
 import UIKit
-
+import AVFoundation
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = .white;
+        LocationTool.shared.getCurrentLocation(isOnce: false) { loc, errorMsg in
+            if errorMsg==nil {
+                print(loc?.coordinate.latitude as Any)
+            }
+        }
     }
 
 
