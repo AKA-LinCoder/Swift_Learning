@@ -29,7 +29,7 @@ class MapVC: UIViewController {
         //    case satellite = 1 卫星
         //    case hybrid = 2 标准+卫星
         //    @available(iOS 9.0, *)
-        //    case satelliteFlyover = 3 3D立体微信
+        //    case satelliteFlyover = 3 3D立体卫星
         //    @available(iOS 9.0, *)
         //    case hybridFlyover = 4 3D立体混合
         //    @available(iOS 11.0, *)
@@ -42,16 +42,30 @@ class MapVC: UIViewController {
         //        mapView.isZoomEnabled = false
         //设置显示
         //建筑物
-        mapView.showsBuildings = true
+//        mapView.showsBuildings = true
         //指南针
-        mapView.showsCompass = true
+//        mapView.showsCompass = true
        
         mapView.showsUserLocation = true
-        mapView.showsScale = true
-        mapView.showsTraffic = true
+//        mapView.showsScale = true
+//        mapView.showsTraffic = true
         //拖动有时没用
-        mapView.userTrackingMode = .followWithHeading
+//        mapView.userTrackingMode = .followWithHeading
+        
+        //设置地图代理
+        mapView.delegate = self
         
     }
     
+}
+extension MapVC:MKMapViewDelegate{
+    
+    /// 当地图更新用户位置信息的时候调用
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        userLocation.title = "林"
+        userLocation.subtitle = "关羽"
+    
+        //移动地图的中心
+        mapView.setCenter(userLocation.coordinate, animated: true)
+    }
 }
