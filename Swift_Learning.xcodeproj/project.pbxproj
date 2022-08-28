@@ -18,6 +18,7 @@
 		86F79D90FA34C5C1C27A4FC6 /* Pods_Swift_Learning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D20393DE329928E89E497F7 /* Pods_Swift_Learning.framework */; };
 		CE8E21A928BB041D00780C4A /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E21A728BB041D00780C4A /* MapVC.swift */; };
 		CE8E21AA28BB041D00780C4A /* MapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8E21A828BB041D00780C4A /* MapVC.xib */; };
+		CE8E21AC28BB684800780C4A /* LinGAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E21AB28BB684800780C4A /* LinGAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		CD7954A946BF2B2AD17D8ADD /* Pods-Swift_Learning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_Learning.debug.xcconfig"; path = "Target Support Files/Pods-Swift_Learning/Pods-Swift_Learning.debug.xcconfig"; sourceTree = "<group>"; };
 		CE8E21A728BB041D00780C4A /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		CE8E21A828BB041D00780C4A /* MapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapVC.xib; sourceTree = "<group>"; };
+		CE8E21AB28BB684800780C4A /* LinGAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinGAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				69D9A56A28B89B4C004812B7 /* LocationTool.swift */,
 				CE8E21A728BB041D00780C4A /* MapVC.swift */,
 				CE8E21A828BB041D00780C4A /* MapVC.xib */,
+				CE8E21AB28BB684800780C4A /* LinGAnnotation.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				69D6CDEF27FFC64200706B18 /* ViewController.swift in Sources */,
 				69D6CDEB27FFC64200706B18 /* AppDelegate.swift in Sources */,
 				69D6CDED27FFC64200706B18 /* SceneDelegate.swift in Sources */,
+				CE8E21AC28BB684800780C4A /* LinGAnnotation.swift in Sources */,
 				69424E4A28AE4D6000DF0939 /* FileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
