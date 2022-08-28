@@ -16,6 +16,8 @@
 		69D6CDF727FFC64300706B18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D6CDF527FFC64300706B18 /* LaunchScreen.storyboard */; };
 		69D9A56B28B89B4C004812B7 /* LocationTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9A56A28B89B4C004812B7 /* LocationTool.swift */; };
 		86F79D90FA34C5C1C27A4FC6 /* Pods_Swift_Learning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D20393DE329928E89E497F7 /* Pods_Swift_Learning.framework */; };
+		CE8E21A928BB041D00780C4A /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E21A728BB041D00780C4A /* MapVC.swift */; };
+		CE8E21AA28BB041D00780C4A /* MapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8E21A828BB041D00780C4A /* MapVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		69D9A56A28B89B4C004812B7 /* LocationTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTool.swift; sourceTree = "<group>"; };
 		9D20393DE329928E89E497F7 /* Pods_Swift_Learning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Learning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7954A946BF2B2AD17D8ADD /* Pods-Swift_Learning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_Learning.debug.xcconfig"; path = "Target Support Files/Pods-Swift_Learning/Pods-Swift_Learning.debug.xcconfig"; sourceTree = "<group>"; };
+		CE8E21A728BB041D00780C4A /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		CE8E21A828BB041D00780C4A /* MapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				69D9A56A28B89B4C004812B7 /* LocationTool.swift */,
+				CE8E21A728BB041D00780C4A /* MapVC.swift */,
+				CE8E21A828BB041D00780C4A /* MapVC.xib */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -140,7 +146,6 @@
 				69D6CDE327FFC64200706B18 /* Sources */,
 				69D6CDE427FFC64200706B18 /* Frameworks */,
 				69D6CDE527FFC64200706B18 /* Resources */,
-				6C9496127916CB4C4114A137 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69D6CDF727FFC64300706B18 /* LaunchScreen.storyboard in Resources */,
+				CE8E21AA28BB041D00780C4A /* MapVC.xib in Resources */,
 				69D6CDF427FFC64300706B18 /* Assets.xcassets in Resources */,
 				69D6CDF227FFC64200706B18 /* Main.storyboard in Resources */,
 			);
@@ -198,23 +204,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6C9496127916CB4C4114A137 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Swift_Learning/Pods-Swift_Learning-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Swift_Learning/Pods-Swift_Learning-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swift_Learning/Pods-Swift_Learning-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A1FF417EEAEA3749CCB5598A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69D9A56B28B89B4C004812B7 /* LocationTool.swift in Sources */,
+				CE8E21A928BB041D00780C4A /* MapVC.swift in Sources */,
 				69D6CDEF27FFC64200706B18 /* ViewController.swift in Sources */,
 				69D6CDEB27FFC64200706B18 /* AppDelegate.swift in Sources */,
 				69D6CDED27FFC64200706B18 /* SceneDelegate.swift in Sources */,
