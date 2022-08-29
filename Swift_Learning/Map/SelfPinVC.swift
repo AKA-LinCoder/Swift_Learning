@@ -14,9 +14,16 @@ class SelfPinVC: UIViewController {
         let geo = CLGeocoder()
         return geo
     }()
+    lazy var locationM:CLLocationManager = {
+        let m = CLLocationManager()
+        return m
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
+        //切换追踪模式
+        let item = MKUserTrackingBarButtonItem(mapView: mapView)
+        navigationItem.rightBarButtonItem = item
 
         
     }
@@ -58,30 +65,38 @@ class SelfPinVC: UIViewController {
 
 extension SelfPinVC:MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        let identifier = "Placemark"
-//            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-//            if annotationView == nil {
-//                annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-//                annotationView?.canShowCallout = true
-//
-//                // attach an information button to the view
-//                annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-//            } else {
-//                // we have a view to reuse, so give it the new annotation
-//                annotationView?.annotation = annotation
-//            }
-//
-//            // whether it's a new view or a recycled one, send it back
-//            return annotationView
-        //从缓存中取
-        var annView = mapView.dequeueReusableAnnotationView(withIdentifier: "item")
-        if(annView == nil){
-            annView = MKMarkerAnnotationView.init(annotation: annotation, reuseIdentifier: "item")
-        }else{
-            annView?.annotation = annotation
+        let identifier = "Placemark"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+            let imageView = UIImageView(image: UIImage(named: "zhao"))
+            imageView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+            //设置左侧视图,如果左右两侧设置了同一个imageView，只会显示右边的
+            annotationView?.leftCalloutAccessoryView = imageView
+//            annotationView?.rightCalloutAccessoryView = imageView
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            annotationView?.detailCalloutAccessoryView = UISwitch()
+            //设置可以拖动
+            annotationView?.isDraggable = true
+            annotationView?.image = UIImage(named: "map")
+        } else {
+            annotationView?.annotation = annotation
         }
-        annView?.canShowCallout = true
-        annView?.backgroundColor = .purple
-        return annView
+        return annotationView
     }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        //拿到数据模型
+        let ann = view.annotation
+        print("选中了\(String(describing: ann?.title ?? ""))")
+    }
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        //拿到数据模型
+        let ann = view.annotation
+        print("取消选中了\(String(describing: ann?.title ?? ""))")
+    }
+    
+    
 }
