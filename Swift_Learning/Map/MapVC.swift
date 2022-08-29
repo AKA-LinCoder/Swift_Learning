@@ -72,13 +72,12 @@ class MapVC: UIViewController {
         annotaion.coordinate = mapView.centerCoordinate
         annotaion.title = "666"
         annotaion.subtitle = "778"
-        
+      
         //2.添加大头针数据模型到地图上
         mapView.addAnnotation(annotaion)
-        
-        
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("sad")
         //1.获取所有大头针
         let annotations = mapView.annotations
         mapView.removeAnnotations(annotations)
@@ -88,9 +87,9 @@ class MapVC: UIViewController {
         //1.获取当前点击的位置，对应的经纬度信息
         guard let point = touches.first?.location(in: mapView) else { return }
         let coordinate =  mapView.convert(point, toCoordinateFrom: mapView)
-    
+//        mapView.delegate = self
         //2.直接调用自定义方法添加
-        let lin =  addAnnotaion(coordinate: coordinate, title: "title", subTitle: "subTitle")
+        let lin =  addAnnotaion(coordinate: coordinate, title: "", subTitle: "")
         /*
          先给两个任意字符串用于展位，只有有占位的东西，后面改的才能显示
          */
@@ -100,7 +99,6 @@ class MapVC: UIViewController {
                 let pl = places?.first
                 lin.title = pl?.locality ?? ""
                 lin.subtitle = pl?.name ?? ""
-                print(pl?.locality ?? "")
             }else{
                 print(error?.localizedDescription as Any)
             }
@@ -124,9 +122,6 @@ class MapVC: UIViewController {
     
 }
 extension MapVC:MKMapViewDelegate{
-    
-    
-    
     /// 当地图更新用户位置信息的时候调用
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         userLocation.title = "林"
@@ -142,4 +137,20 @@ extension MapVC:MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
 //        mapView.setRegion(<#T##region: MKCoordinateRegion##MKCoordinateRegion#>, animated: <#T##Bool#>)
     }
+    
+    ///自定义大头针样式
+    ///和cell一样，都有一个循环利用机制
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        //从缓存中取
+        var annView = mapView.dequeueReusableAnnotationView(withIdentifier: "item")
+        if(annView == nil){
+            annView = MKAnnotationView.init(annotation: annotation, reuseIdentifier: "item")
+        }
+        annView?.backgroundColor = .purple
+        annView?.isDraggable = true
+        
+        return annView
+    }
+    
+    
 }
