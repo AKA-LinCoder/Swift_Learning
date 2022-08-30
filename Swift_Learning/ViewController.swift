@@ -19,13 +19,14 @@ class ViewController: UIViewController {
     }()
     
     lazy var array:[String] = {
-        let array = ["Map使用","自定义大头针","使用系统app导航"]
+        let array = ["Map使用","自定义大头针","使用系统app导航","百度地图"]
         return array
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white;
         view.addSubview(self.tableView);
+        print("bundleID:\(Bundle.main.bundleIdentifier)")
         LocationTool.shared.getCurrentLocation(isOnce: false) { loc, errorMsg in
             if errorMsg==nil {
                 print(loc?.coordinate.latitude as Any)
@@ -58,6 +59,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
             let vc = SelfPinVC()
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(indexPath.row == 2){
+            let vc = NavigationVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if(indexPath.row == 3){
+            let vc = BaiDuMapVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if(indexPath.row == 4){
             let vc = NavigationVC()
             self.navigationController?.pushViewController(vc, animated: true)
         }

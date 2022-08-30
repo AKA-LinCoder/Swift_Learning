@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		69424E4A28AE4D6000DF0939 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69424E4928AE4D6000DF0939 /* FileManager.swift */; };
+		698F201128BE46900038FDFC /* BaiDuMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F200F28BE46900038FDFC /* BaiDuMapVC.swift */; };
+		698F201228BE46900038FDFC /* BaiDuMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 698F201028BE46900038FDFC /* BaiDuMapVC.xib */; };
 		69D6CDEB27FFC64200706B18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D6CDEA27FFC64200706B18 /* AppDelegate.swift */; };
 		69D6CDED27FFC64200706B18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D6CDEC27FFC64200706B18 /* SceneDelegate.swift */; };
 		69D6CDEF27FFC64200706B18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D6CDEE27FFC64200706B18 /* ViewController.swift */; };
@@ -28,6 +30,9 @@
 /* Begin PBXFileReference section */
 		5D4A9E2D9C3D33A625A3034D /* Pods-Swift_Learning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_Learning.release.xcconfig"; path = "Target Support Files/Pods-Swift_Learning/Pods-Swift_Learning.release.xcconfig"; sourceTree = "<group>"; };
 		69424E4928AE4D6000DF0939 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		698F200F28BE46900038FDFC /* BaiDuMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaiDuMapVC.swift; sourceTree = "<group>"; };
+		698F201028BE46900038FDFC /* BaiDuMapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaiDuMapVC.xib; sourceTree = "<group>"; };
+		698F201328BE48F20038FDFC /* Swift_Learning-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift_Learning-Bridging-Header.h"; sourceTree = "<group>"; };
 		69D6CDE727FFC64200706B18 /* Swift_Learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_Learning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D6CDEA27FFC64200706B18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69D6CDEC27FFC64200706B18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +98,16 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		698F200E28BE46720038FDFC /* BaiDuMap */ = {
+			isa = PBXGroup;
+			children = (
+				698F200F28BE46900038FDFC /* BaiDuMapVC.swift */,
+				698F201028BE46900038FDFC /* BaiDuMapVC.xib */,
+				698F201328BE48F20038FDFC /* Swift_Learning-Bridging-Header.h */,
+			);
+			path = BaiDuMap;
+			sourceTree = "<group>";
+		};
 		69D6CDDE27FFC64200706B18 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +129,7 @@
 		69D6CDE927FFC64200706B18 /* Swift_Learning */ = {
 			isa = PBXGroup;
 			children = (
+				698F200E28BE46720038FDFC /* BaiDuMap */,
 				69D9A56928B89B32004812B7 /* Map */,
 				69424E4628AE4C8C00DF0939 /* AVFoundation */,
 				69D6CDEA27FFC64200706B18 /* AppDelegate.swift */,
@@ -161,6 +177,8 @@
 				69D6CDE327FFC64200706B18 /* Sources */,
 				69D6CDE427FFC64200706B18 /* Frameworks */,
 				69D6CDE527FFC64200706B18 /* Resources */,
+				F9696672E20FF482DC3D917F /* [CP] Embed Pods Frameworks */,
+				816314F87DFF7AE2A8D89CA2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -183,6 +201,7 @@
 				TargetAttributes = {
 					69D6CDE627FFC64200706B18 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -213,6 +232,7 @@
 				CE8E21AA28BB041D00780C4A /* MapVC.xib in Resources */,
 				CE0363F728BDA09C009D7826 /* NavigationVC.xib in Resources */,
 				69D6CDF427FFC64300706B18 /* Assets.xcassets in Resources */,
+				698F201228BE46900038FDFC /* BaiDuMapVC.xib in Resources */,
 				69D6CDF227FFC64200706B18 /* Main.storyboard in Resources */,
 				CEACA65F28BC9BD100F2C42C /* SelfPinVC.xib in Resources */,
 			);
@@ -221,6 +241,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		816314F87DFF7AE2A8D89CA2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swift_Learning/Pods-Swift_Learning-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swift_Learning/Pods-Swift_Learning-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swift_Learning/Pods-Swift_Learning-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A1FF417EEAEA3749CCB5598A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,6 +280,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F9696672E20FF482DC3D917F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swift_Learning/Pods-Swift_Learning-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swift_Learning/Pods-Swift_Learning-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swift_Learning/Pods-Swift_Learning-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -253,6 +307,7 @@
 				69D9A56B28B89B4C004812B7 /* LocationTool.swift in Sources */,
 				CE8E21A928BB041D00780C4A /* MapVC.swift in Sources */,
 				69D6CDEF27FFC64200706B18 /* ViewController.swift in Sources */,
+				698F201128BE46900038FDFC /* BaiDuMapVC.swift in Sources */,
 				CE0363F628BDA09C009D7826 /* NavigationVC.swift in Sources */,
 				69D6CDEB27FFC64200706B18 /* AppDelegate.swift in Sources */,
 				CEACA65E28BC9BD100F2C42C /* SelfPinVC.swift in Sources */,
@@ -406,6 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K4DVKAD4TK;
@@ -428,6 +484,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.self.Swift-Learning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift_Learning/BaiDuMap/Swift_Learning-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -439,6 +497,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = K4DVKAD4TK;
@@ -461,6 +520,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.self.Swift-Learning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift_Learning/BaiDuMap/Swift_Learning-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

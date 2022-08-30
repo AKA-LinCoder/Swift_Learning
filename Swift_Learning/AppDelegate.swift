@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import BaiduMapAPI_Base
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // 要使用百度地图，请先启动BMKMapManager
+        let manager = BMKMapManager()
+        let isStart =  manager.start("gYcxzXGBfbyEp6nZT2yVdSv2jfAv2kza", generalDelegate: self)
+        if(!isStart){
+            print("百度地图引擎启动失败")
+        }
         return true
     }
 
@@ -34,3 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate:BMKGeneralDelegate{
+    
+}
