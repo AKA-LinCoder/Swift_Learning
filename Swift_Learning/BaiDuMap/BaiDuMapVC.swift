@@ -37,6 +37,10 @@ class BaiDuMapVC: UIViewController {
         self.view.addSubview(mapView)
         let flag = poiSearch.poiSearchNear(by:nearByOption)
         print("flag:\(flag)")
+        
+        //导航授权
+//        BNCore
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
