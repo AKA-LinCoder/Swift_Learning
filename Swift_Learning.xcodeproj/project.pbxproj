@@ -16,6 +16,8 @@
 		69D6CDF727FFC64300706B18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D6CDF527FFC64300706B18 /* LaunchScreen.storyboard */; };
 		69D9A56B28B89B4C004812B7 /* LocationTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9A56A28B89B4C004812B7 /* LocationTool.swift */; };
 		86F79D90FA34C5C1C27A4FC6 /* Pods_Swift_Learning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D20393DE329928E89E497F7 /* Pods_Swift_Learning.framework */; };
+		CE0363F628BDA09C009D7826 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0363F428BDA09C009D7826 /* NavigationVC.swift */; };
+		CE0363F728BDA09C009D7826 /* NavigationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0363F528BDA09C009D7826 /* NavigationVC.xib */; };
 		CE8E21A928BB041D00780C4A /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E21A728BB041D00780C4A /* MapVC.swift */; };
 		CE8E21AA28BB041D00780C4A /* MapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8E21A828BB041D00780C4A /* MapVC.xib */; };
 		CE8E21AC28BB684800780C4A /* LinGAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8E21AB28BB684800780C4A /* LinGAnnotation.swift */; };
@@ -37,6 +39,8 @@
 		69D9A56A28B89B4C004812B7 /* LocationTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTool.swift; sourceTree = "<group>"; };
 		9D20393DE329928E89E497F7 /* Pods_Swift_Learning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Learning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7954A946BF2B2AD17D8ADD /* Pods-Swift_Learning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_Learning.debug.xcconfig"; path = "Target Support Files/Pods-Swift_Learning/Pods-Swift_Learning.debug.xcconfig"; sourceTree = "<group>"; };
+		CE0363F428BDA09C009D7826 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
+		CE0363F528BDA09C009D7826 /* NavigationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationVC.xib; sourceTree = "<group>"; };
 		CE8E21A728BB041D00780C4A /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		CE8E21A828BB041D00780C4A /* MapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapVC.xib; sourceTree = "<group>"; };
 		CE8E21AB28BB684800780C4A /* LinGAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinGAnnotation.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 				CE8E21AB28BB684800780C4A /* LinGAnnotation.swift */,
 				CEACA65C28BC9BD100F2C42C /* SelfPinVC.swift */,
 				CEACA65D28BC9BD100F2C42C /* SelfPinVC.xib */,
+				CE0363F428BDA09C009D7826 /* NavigationVC.swift */,
+				CE0363F528BDA09C009D7826 /* NavigationVC.xib */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -205,6 +211,7 @@
 			files = (
 				69D6CDF727FFC64300706B18 /* LaunchScreen.storyboard in Resources */,
 				CE8E21AA28BB041D00780C4A /* MapVC.xib in Resources */,
+				CE0363F728BDA09C009D7826 /* NavigationVC.xib in Resources */,
 				69D6CDF427FFC64300706B18 /* Assets.xcassets in Resources */,
 				69D6CDF227FFC64200706B18 /* Main.storyboard in Resources */,
 				CEACA65F28BC9BD100F2C42C /* SelfPinVC.xib in Resources */,
@@ -246,6 +253,7 @@
 				69D9A56B28B89B4C004812B7 /* LocationTool.swift in Sources */,
 				CE8E21A928BB041D00780C4A /* MapVC.swift in Sources */,
 				69D6CDEF27FFC64200706B18 /* ViewController.swift in Sources */,
+				CE0363F628BDA09C009D7826 /* NavigationVC.swift in Sources */,
 				69D6CDEB27FFC64200706B18 /* AppDelegate.swift in Sources */,
 				CEACA65E28BC9BD100F2C42C /* SelfPinVC.swift in Sources */,
 				69D6CDED27FFC64200706B18 /* SceneDelegate.swift in Sources */,

@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     }()
     
     lazy var array:[String] = {
-        let array = ["Map使用","自定义大头针"]
+        let array = ["Map使用","自定义大头针","使用系统app导航"]
         return array
     }()
     override func viewDidLoad() {
@@ -54,8 +54,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         if indexPath.row == 0 {
             let vc = MapVC()
             self.navigationController?.pushViewController(vc, animated: true)
-        }else{
+        }else if(indexPath.row == 1){
             let vc = SelfPinVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if(indexPath.row == 2){
+            let vc = NavigationVC()
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
