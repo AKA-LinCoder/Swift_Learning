@@ -23,8 +23,8 @@ class BaiDuMapVC: UIViewController {
     
     lazy var nearByOption:BMKPOINearbySearchOption = {
         let options = BMKPOINearbySearchOption()
-        options.keywords = ["按摩店"]
-        options.location = mapView.centerCoordinate
+        options.keywords = ["小吃"]
+        options.location = CLLocationCoordinate2D(latitude: 39.91927958294124, longitude: 116.41223296776482)
         options.pageIndex = 0
         options.pageSize = 20
         options.radius = 1000
@@ -53,11 +53,37 @@ extension BaiDuMapVC:BMKMapViewDelegate{
     
 }
 extension BaiDuMapVC:BMKPoiSearchDelegate{
+    
+    //点击泡泡时
+    func mapView(_ mapView: BMKMapView!, annotationViewForBubble view: BMKAnnotationView!) {
+        //导航
+        //目的地
+        let ann = view.annotation
+        print("导航到--\(String(describing: ann?.coordinate))")
+    }
+    
+    
+    func mapview(_ mapView: BMKMapView!, onLongClick coordinate: CLLocationCoordinate2D) {
+        //调整区域
+        let region = BMKCoordinateRegion(center: mapView.centerCoordinate, span: BMKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+        mapView.setRegion(region, animated: true)
+    }
+    
+    func mapView(_ mapView: BMKMapView!, regionDidChangeAnimated animated: Bool) {
+        print(mapView.region.center)
+    }
+    
     func onGetPoiResult(_ searcher: BMKPoiSearch!, result poiResult: BMKPOISearchResult!, errorCode: BMKSearchErrorCode) {
         if errorCode == BMK_SEARCH_NO_ERROR {
             
             for item in poiResult.poiInfoList {
                 print(item.name)
+                
+                let annotation = BMKPointAnnotation()
+                annotation.coordinate = item.pt
+                annotation.title = item.name
+                annotation.subtitle = item.address
+                mapView.addAnnotation(annotation)
             }
         }else{
             print(errorCode)
