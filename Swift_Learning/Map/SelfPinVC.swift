@@ -24,7 +24,9 @@ class SelfPinVC: UIViewController {
         //切换追踪模式
         let item = MKUserTrackingBarButtonItem(mapView: mapView)
         navigationItem.rightBarButtonItem = item
-
+        self.shotter()
+        self.camera()
+        self.poi()
         
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -61,6 +63,54 @@ class SelfPinVC: UIViewController {
         mapView.addAnnotation(annotaion)
         return annotaion
     }
+    ///地图截图
+    func shotter(){
+        let option = MKMapSnapshotter.Options()
+        option.region = mapView.region
+        option.size = CGSize(width: 1000, height: 1000)
+        let snapshotter = MKMapSnapshotter(options: option)
+        snapshotter.start { shotter, error in
+            if(error == nil){
+                let image = shotter?.image
+                let imageData = UIImage.pngData(image!)
+    
+                let fileName = "学习笔记.png"
+                let fileManager = FileManager.default
+                let file = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
+                let path = file! + fileName
+
+                fileManager.createFile(atPath: path, contents:nil, attributes:nil)
+                print("文件路径:\(path)")
+                let handle = FileHandle(forWritingAtPath:path)
+                handle?.write(imageData()!)
+//                handle?.write(msg.data(using: String.Encoding.utf8)!)
+//                data.writertoF
+            }
+        }
+    }
+    
+    func camera(){
+        let center = mapView.centerCoordinate
+        let camera:MKMapCamera = MKMapCamera(lookingAtCenter: center, fromEyeCoordinate: CLLocationCoordinate2DMake(center.latitude, center.longitude), eyeAltitude: 500)
+        mapView.setCamera(camera, animated: true)
+    }
+    
+    func poi(){
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = "小吃"
+        request.region = mapView.region
+        let search:MKLocalSearch = MKLocalSearch(request: request)
+        search.start { response, error in
+            if(error == nil){
+                let items = response!.mapItems
+                for item in items {
+                    print(item.name)
+                }
+            }
+        }
+    }
+    
+    
 }
 
 extension SelfPinVC:MKMapViewDelegate{
